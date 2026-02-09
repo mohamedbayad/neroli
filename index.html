@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neroli Events | Refined Events. Timeless Elegance.</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nude': '#F7F5F0',
+                        'sable': '#E6E2D8',
+                        'ink': '#121212',
+                        'gold': '#BFA078',
+                        'stone': '#7A7A7A',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    cursor: {
+                        'none': 'none',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="selection:bg-gold selection:text-white">
+
+    <div class="noise"></div>
+    <div id="cursor-dot" class="hidden md:block"></div>
+    <div id="cursor-circle" class="hidden md:block"></div>
+
+    <div class="loader" id="loader">
+        <div class="reveal-load overflow-hidden">
+            <span class="block translate-y-full">
+                <img src="assets/imgs/logo.png" alt="Neroli Events" class="w-32 md:w-48 mx-auto">
+            </span>
+        </div>
+    </div>
+
+    <nav class="fixed top-0 left-0 w-full px-6 md:px-12 py-8 flex justify-between items-center z-50" id="navbar">
+        <a href="#" onclick="lenis.scrollTo(0)" class="block">
+            <img src="assets/imgs/logo.png" alt="Neroli Events" class="h-8 w-auto object-contain">
+        </a>
+
+        <div class="hidden md:flex items-center gap-12">
+            <a href="#about"
+                class="text-xs font-sans uppercase tracking-widest text-ink hover:text-gold transition cursor-pointer smooth-scroll-link">Who
+                We Are</a>
+            <a href="#services"
+                class="text-xs font-sans uppercase tracking-widest text-ink hover:text-gold transition cursor-pointer smooth-scroll-link">What
+                We Do</a>
+            <button onclick="scrollToContact()"
+                class="text-xs font-sans uppercase tracking-widest border border-ink px-6 py-2 rounded-full hover:bg-ink hover:text-nude transition">Contact</button>
+        </div>
+
+        <div class="md:hidden hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a onclick="closeMenuAndScroll('#about')" class="text-xs font-sans uppercase tracking-widest text-ink mb-8">Who
+            We Are</a>
+        <a onclick="closeMenuAndScroll('#services')"
+            class="text-xs font-sans uppercase tracking-widest text-ink mb-8">What
+            We Do</a>
+        <a onclick="closeMenuAndScroll('#contact')"
+            class="text-xs font-sans uppercase tracking-widest text-ink">Contact</a>
+    </div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <section class="min-h-screen relative pt-40 px-6 md:px-24 flex flex-col justify-between pb-12">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                    <div class="md:col-span-8 z-10">
+                        <p class="text-xs font-sans uppercase tracking-[0.3em] text-gold mb-4 reveal-up">Refined Events.
+                            Timeless Elegance.</p>
+                    </div>
+
+                    <div class="md:col-span-6 flex items-end">
+                        <div class="reveal-up delay-300">
+                            <p class="md:hidden text-sm font-sans leading-relaxed text-stone">
+                                Experts in destination weddings and luxury events in Marrakech. We create unforgettable
+                                private and corporate celebrations with elegance, care, and a touch of magic.
+                            </p>
+                            <p class="hidden md:block text-sm font-sans leading-relaxed text-stone max-w-xs ml-auto">
+                                Experts in Destination Weddings in Marrakech. We craft unforgettable private and
+                                corporate experiences, designing destination weddings and refined events in Morocco with
+                                intention and care. From intimate gatherings to grand celebrations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full h-[40vh] md:h-[50vh] mt-12 img-mask" id="hero-img">
+                    <img src="assets/imgs/hero.webp"
+                        class="w-full h-full object-cover parallax-img" alt="Marrakech">
+                </div>
+            </section>
+
+            <section class="marquee-container">
+                <div class="marquee-content font-sans text-xs md:text-sm tracking-[0.2em] font-medium">
+                    BESPOKE EVENTS IN MARRAKECH © LIMITED 2025 DATES © NOW BOOK © BESPOKE EVENTS IN
+                    MARRAKECH © LIMITED 2025 DATES © NOW BOOK © BESPOKE EVENTS IN MARRAKECH © LIMITED 2025
+                    DATES © NOW BOOK
+                </div>
+            </section>
+
+            <section id="about" class="py-24 md:py-32 px-6 md:px-24 bg-nude">
+                <div class="max-w-4xl mx-auto text-center mb-16 md:mb-24">
+                    <h2 class="text-sm font-sans uppercase tracking-[0.2em] text-gold mb-8">Who We Are</h2>
+
+                    <p class="md:hidden text-2xl font-serif leading-relaxed text-ink">
+                        “We craft seamless, memorable experiences that linger in memory.”
+                    </p>
+
+                    <p class="hidden md:block text-3xl md:text-4xl font-serif leading-relaxed text-ink">
+                        “We’re a team that finds joy in seamless elegance, thoughtful planning, and crafting experiences
+                        that linger in memory.”
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+                    <div class="img-mask w-full aspect-[4/5]">
+                        <img src="assets/imgs/about.webp"
+                            class="w-full h-full object-cover parallax-img grayscale hover:grayscale-0 transition duration-700">
+                    </div>
+                    <div class="space-y-8">
+                        <div class="md:hidden space-y-6 text-stone font-sans text-sm leading-loose">
+                            <p>Every detail comes from collaboration, attention, and a shared vision.</p>
+                            <p>Neroli Events is refinement, connection, and a love for beauty — moments that become
+                                memories.</p>
+                        </div>
+
+                        <div class="hidden md:block space-y-8 text-stone font-sans text-sm leading-loose">
+                            <p>For us, organizing an event isn’t about one person doing it all — it’s about
+                                collaboration. Every detail, every moment, every surprise comes from a shared vision and
+                                careful attention.</p>
+                            <p>As event planners based in Marrakech, we create spaces where you feel understood,
+                                effortlessly confident, and free to enjoy your celebration. We believe in trust, in
+                                effortless sophistication.</p>
+                            <p>Neroli Events is refinement. It’s connection. It’s a love for beauty — and for moments
+                                that turn into unforgettable memories.</p>
+                        </div>
+
+                        <div class="pt-8">
+                            <span class="font-serif italic text-xl md:text-2xl text-ink">Shall we craft your story
+                                together?</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery-pin"
+                class="min-h-screen md:h-screen bg-[#E6E2D8] overflow-hidden flex flex-col justify-center relative border-t border-[#121212]/10 py-20 md:py-0">
+
+                <div class="relative md:absolute top-0 md:top-12 left-6 md:left-24 z-10 mb-8 md:mb-0">
+                    <h2 class="text-3xl md:text-5xl font-[Cormorant] italic text-[#121212]">Curated Moments</h2>
+                </div>
+
+                <div class="gallery-track flex gap-4 md:gap-12 pl-6 md:pl-24 items-center w-fit overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none scroll-smooth"
+                    id="gallery-track" style="-webkit-overflow-scrolling: touch;">
+
+                    <div class="gallery-item hidden md:flex w-[25vw] flex-shrink-0 flex-col justify-center pr-12">
+                        <p class="text-[#7A7A7A] font-[Montserrat] text-sm leading-loose">
+                            Every wedding is a collection of fleeting moments and timeless details. We curate the
+                            atmosphere, the light, and the emotion.
+                        </p>
+                        <span class="text-[10px] uppercase tracking-widest text-[#121212] mt-8 flex items-center gap-2">
+                            Scroll to Explore <span class="w-8 h-[1px] bg-[#121212]"></span>
+                        </span>
+                    </div>
+
+                    <div
+                        class="gallery-item w-[75vw] md:w-[35vw] aspect-[3/4] flex-shrink-0 relative overflow-hidden group snap-center">
+                        <div class="img-wrapper w-full h-full overflow-hidden">
+                            <img src="assets/imgs/2.jpg"
+                                class="gallery-img w-full h-full md:h-[120%] object-cover transition duration-700">
+                        </div>
+                        <span
+                            class="absolute bottom-4 left-4 text-[#F7F5F0] text-xs font-[Montserrat] uppercase tracking-widest z-10">Reception</span>
+                    </div>
+
+                    <div
+                        class="gallery-item w-[75vw] md:w-[35vw] aspect-[3/4] flex-shrink-0 relative overflow-hidden group snap-center">
+                        <div class="img-wrapper w-full h-full overflow-hidden">
+                            <img src="assets/imgs/3.jpg"
+                                class="gallery-img w-full h-full md:h-[120%] object-cover transition duration-700">
+                        </div>
+                        <span
+                            class="absolute bottom-4 left-4 text-[#F7F5F0] text-xs font-[Montserrat] uppercase tracking-widest z-10">Ceremony</span>
+                    </div>
+
+                    <div
+                        class="gallery-item w-[75vw] md:w-[35vw] aspect-[3/4] flex-shrink-0 relative overflow-hidden group snap-center">
+                        <div class="img-wrapper w-full h-full overflow-hidden">
+                            <img src="assets/imgs/4.jpg"
+                                class="gallery-img w-full h-full md:h-[120%] object-cover transition duration-700">
+                        </div>
+                        <span
+                            class="absolute bottom-4 left-4 text-[#F7F5F0] text-xs font-[Montserrat] uppercase tracking-widest z-10">Details</span>
+                    </div>
+
+                    <div
+                        class="gallery-item w-[75vw] md:w-[35vw] aspect-[3/4] flex-shrink-0 relative overflow-hidden group snap-center">
+                        <div class="img-wrapper w-full h-full overflow-hidden">
+                            <img src="assets/imgs/blob.jpg"
+                                class="gallery-img w-full h-full md:h-[120%] object-cover transition duration-700">
+                        </div>
+                        <span
+                            class="absolute bottom-4 left-4 text-[#F7F5F0] text-xs font-[Montserrat] uppercase tracking-widest z-10">Atmosphere</span>
+                    </div>
+
+                    <div
+                        class="gallery-item w-[75vw] md:w-[35vw] aspect-[3/4] flex-shrink-0 relative overflow-hidden group snap-center">
+                        <div class="img-wrapper w-full h-full overflow-hidden">
+                            <img src="assets/imgs/2.jpg"
+                                class="gallery-img w-full h-full md:h-[120%] object-cover transition duration-700">
+                        </div>
+                        <span
+                            class="absolute bottom-4 left-4 text-[#F7F5F0] text-xs font-[Montserrat] uppercase tracking-widest z-10">Atmosphere</span>
+                    </div>
+
+                    <div
+                        class="gallery-item w-[75vw] md:w-[35vw] aspect-[3/4] flex-shrink-0 relative overflow-hidden group snap-center">
+                        <div class="img-wrapper w-full h-full overflow-hidden">
+                            <img src="assets/imgs/3.jpg"
+                                class="gallery-img w-full h-full md:h-[120%] object-cover transition duration-700">
+                        </div>
+                        <span
+                            class="absolute bottom-4 left-4 text-[#F7F5F0] text-xs font-[Montserrat] uppercase tracking-widest z-10">Atmosphere</span>
+                    </div>
+
+                    <div
+                        class="gallery-item w-[75vw] md:w-[35vw] aspect-[3/4] flex-shrink-0 relative overflow-hidden group snap-center">
+                        <div class="img-wrapper w-full h-full overflow-hidden">
+                            <img src="assets/imgs/blob.jpg"
+                                class="gallery-img w-full h-full md:h-[120%] object-cover transition duration-700">
+                        </div>
+                        <span
+                            class="absolute bottom-4 left-4 text-[#F7F5F0] text-xs font-[Montserrat] uppercase tracking-widest z-10">Atmosphere</span>
+                    </div>
+
+                    <div class="w-[10vw] flex-shrink-0"></div>
+
+                </div>
+            </section>
+
+            <section class="py-24 bg-sable text-ink relative" id="services">
+                <div class="px-6 md:px-24 max-w-[1600px] mx-auto">
+
+                    <div class="text-center mb-16 md:mb-24">
+                        <h2 class="text-sm font-sans uppercase tracking-[0.2em] text-gold">WHAT WE DO</h2>
+                    </div>
+
+                    <div class="flex lg:flex-row flex-col gap-12">
+
+                        <div class="w-full lg:w-1/2 z-10 py-12">
+
+                            <div class="service-text-block min-h-[auto] md:min-h-[50vh] flex flex-col justify-center border-l border-ink/10 pl-8 md:pl-12 mb-16 md:mb-24"
+                                data-index="0">
+                                <span class="text-gold text-xs font-sans uppercase tracking-widest mb-4 block">01</span>
+                                <h3 class="text-3xl md:text-4xl font-serif mb-4 md:mb-6">Full Planning</h3>
+
+                                <p class="md:hidden text-stone font-sans leading-relaxed text-sm mb-6">
+                                    Complete wedding and event planning in Marrakech. Every detail handled with care -
+                                    design, logistics, and coordination. So you can simply enjoy the moment.
+                                </p>
+                                <p class="hidden md:block text-stone font-sans leading-relaxed text-sm mb-8 max-w-md">
+                                    For clients seeking a seamless, effortless celebration. We design and organize every
+                                    detail with care, guided by your story. From the first steps to the day itself, we
+                                    manage full wedding planning and event coordination. Nothing is left to chance.
+                                </p>
+
+                                <button onclick="triggerForm('Full Planning')"
+                                    class="text-xs uppercase tracking-widest border-b border-ink pb-1 w-fit hover:text-gold transition">Inquire</button>
+                            </div>
+
+                            <div class="service-text-block min-h-[auto] md:min-h-[50vh] flex flex-col justify-center border-l border-ink/10 pl-8 md:pl-12 mb-16 md:mb-24"
+                                data-index="1">
+                                <span class="text-gold text-xs font-sans uppercase tracking-widest mb-4 block">02</span>
+                                <h3 class="text-3xl md:text-4xl font-serif mb-4 md:mb-6">Extended Celebrations</h3>
+
+                                <p class="md:hidden text-stone font-sans leading-relaxed text-sm mb-6">
+                                    Multi-day programs for international guests. Welcome parties, post-event gatherings,
+                                    and curated experiences. Seamless, elegant, unforgettable.
+                                </p>
+                                <p class="hidden md:block text-stone font-sans leading-relaxed text-sm mb-8 max-w-md">
+                                    For those hosting international guests or wishing to savor each moment. We offer
+                                    extended celebrations in Marrakech: welcome parties, post-event gatherings, and
+                                    thoughtfully curated multi-day programs creating a cohesive experience.
+                                </p>
+
+                                <button onclick="triggerForm('Extended Celebrations')"
+                                    class="text-xs uppercase tracking-widest border-b border-ink pb-1 w-fit hover:text-gold transition">Inquire</button>
+                            </div>
+
+                            <div class="service-text-block min-h-[auto] md:min-h-[50vh] flex flex-col justify-center border-l border-ink/10 pl-8 md:pl-12 mb-16 md:mb-24"
+                                data-index="2">
+                                <span class="text-gold text-xs font-sans uppercase tracking-widest mb-4 block">03</span>
+                                <h3 class="text-3xl md:text-4xl font-serif mb-4 md:mb-6">Venue Scouting</h3>
+
+                                <p class="md:hidden text-stone font-sans leading-relaxed text-sm mb-6">
+                                    We select villas, riads, and exceptional venues in Marrakech and Morocco. Brochures,
+                                    visits, and professional guidance included.
+                                </p>
+                                <p class="hidden md:block text-stone font-sans leading-relaxed text-sm mb-8 max-w-md">
+                                    For clients who need clarity and inspiration from the start. We curate a refined
+                                    selection of villas, riads, and exceptional event venues. Brochures, pricing, and
+                                    professional insights are provided to help you choose with confidence.
+                                </p>
+
+                                <button onclick="triggerForm('Venue Scouting')"
+                                    class="text-xs uppercase tracking-widest border-b border-ink pb-1 w-fit hover:text-gold transition">Start
+                                    Scouting</button>
+                            </div>
+
+                            <div class="service-text-block min-h-[auto] md:min-h-[50vh] flex flex-col justify-center border-l border-ink/10 pl-8 md:pl-12"
+                                data-index="3">
+                                <span class="text-gold text-xs font-sans uppercase tracking-widest mb-4 block">04</span>
+                                <h3 class="text-3xl md:text-4xl font-serif mb-4 md:mb-6">Elopement</h3>
+
+                                <p class="md:hidden text-stone font-sans leading-relaxed text-sm mb-6">
+                                    Intimate events designed with elegance and intention. Exclusive venues, trusted
+                                    vendors, and full day-of coordination. Moments to fully live and remember.
+                                </p>
+                                <p class="hidden md:block text-stone font-sans leading-relaxed text-sm mb-8 max-w-md">
+                                    An intimate, thoughtfully composed event. For clients who value quiet elegance. We
+                                    design elopements and intimate weddings with sensitivity. We shape the creative
+                                    direction and coordinate trusted vendors.
+                                </p>
+
+                                <button onclick="triggerForm('Elopement')"
+                                    class="text-xs uppercase tracking-widest border-b border-ink pb-1 w-fit hover:text-gold transition">Plan
+                                    Elopement</button>
+                            </div>
+
+                        </div>
+
+                        <div class="w-full lg:w-1/2 relative hidden lg:block">
+                            <div class="sticky top-24 h-[80vh] w-full overflow-hidden shadow-2xl rounded-sm">
+                                <div class="service-img-container active" id="img-0"><img
+                                        src="https://imgs.search.brave.com/1dTThgV5ZYXbBPo4ciGGsX8VrVPhymdqlVI72t-aQ_o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1hcGkueG9ncnAu/Y29tL2ltYWdlcy9m/ZTlkNzc5OC01YTc3/LTRiMGItODkxMS03/MmEzZDY0NGJmOWF-/cnNfNzY4LmgtY3Jf/MC4wLjEyODAuOTYw">
+                                </div>
+                                <div class="service-img-container" id="img-1"><img
+                                        src="https://imgs.search.brave.com/steFZFgtb5czBzbo-LM2pod7i61IKfZ5FerfDVIO_vs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/aW1naXguaGVhZG91/dC5jb20vbWVkaWEv/aW1hZ2VzLzU1NTU0/N2U3LTk3Y2YtNGU5/MS1iYzg0LThiNjVm/ZDlkNzQyYi0xNzYy/NTA0ODc4MzQwLTMy/NTMwMC5qcGc_YXV0/bz1mb3JtYXQmcT05/MCZjcm9wPWZhY2Vz/JmZpdD1jcm9w">
+                                </div>
+                                <div class="service-img-container" id="img-2"><img
+                                        src="https://imgs.search.brave.com/BTgCQBD1JFBJ8cpdC7if0r7cB9ScRguqNGjS-Wg0tLE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kcm9w/aW5ibG9nLm5ldC9j/ZG4tY2dpL2ltYWdl/L2ZpdD1zY2FsZS1k/b3duLHdpZHRoPTEx/NDAvMzQyNDY3OTgv/ZmlsZXMvZmVhdHVy/ZWQvVGhlX01vcm9j/Y2FuX0ludGVyaW9y/X0Rlc2lnbi5qcGc">
+                                </div>
+                                <div class="service-img-container" id="img-3"><img
+                                        src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="py-24 px-6 bg-[#F7F5F0] text-[#121212]">
+                <div class="max-w-3xl mx-auto">
+
+                    <form id="whatsapp-form" onsubmit="handleFormSubmit(event)" class="border border-[#121212]/20">
+
+                        <div class="p-12 text-center border-b border-[#121212]/20">
+                            <h2 class="text-4xl md:text-5xl font-[Cormorant] italic">This is where your event story
+                                begins</h2>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row border-b border-[#121212]/20">
+                            <div
+                                class="w-full md:w-1/2 p-8 border-b md:border-b-0 md:border-r border-[#121212]/20 relative">
+                                <label
+                                    class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-[Montserrat]">Name*</label>
+                                <input type="text" id="name" required
+                                    class="w-full bg-transparent outline-none text-xl font-[Cormorant] placeholder-gray-300">
+                            </div>
+                            <div class="w-full md:w-1/2 p-8 relative">
+                                <label
+                                    class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-[Montserrat]">Email*</label>
+                                <input type="email" id="email" required
+                                    class="w-full bg-transparent outline-none text-xl font-[Cormorant] placeholder-gray-300">
+                            </div>
+                        </div>
+
+                        <div class="p-8 border-b border-[#121212]/20">
+                            <textarea id="message" rows="1"
+                                class="w-full bg-transparent outline-none text-xl font-[Cormorant] resize-none h-32 placeholder-gray-400"
+                                placeholder="Tell us about your event plans — dates, location, ideas... or just say hi!"></textarea>
+                        </div>
+
+                        <div class="p-8 border-b border-[#121212]/20 flex items-center gap-6">
+                            <div class="relative">
+                                <input type="checkbox" id="privacy" required class="oval-checkbox">
+                            </div>
+                            <label for="privacy" class="text-lg font-[Cormorant] cursor-pointer opacity-80">
+                                I have read and accept the privacy policy
+                            </label>
+                        </div>
+
+                        <div class="py-16 flex justify-center items-center bg-[#F7F5F0]">
+                            <button type="submit" class="oval-button group">
+                                <span
+                                    class="text-xs uppercase tracking-widest font-[Montserrat] group-hover:text-[#F7F5F0] transition">Send
+                                    Message</span>
+                            </button>
+                        </div>
+
+                    </form>
+
+                    <div
+                        class="mt-6 flex flex-col md:flex-row justify-between items-center text-xs uppercase tracking-widest text-gray-500 font-[Montserrat]">
+                        <p class="text-center">We reply fast — usually within a few hours</p>
+                        <a href="mailto:nerolievents.contact@gmail.com"
+                            class="hover:text-black transition underline">contact@nerolievents.com</a>
+                    </div>
+
+                </div>
+            </section>
+
+            <footer
+                class="py-8 text-center text-[10px] uppercase tracking-widest text-stone border-t border-ink/5 bg-nude">
+                &copy; 2024 Neroli Events
+            </footer>
+
+        </div>
+    </div>
+
+    <div id="waiting-overlay"
+        class="fixed inset-0 z-[11000] hidden items-center justify-center bg-ink/90 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div
+            class="bg-nude border border-gold p-12 text-center max-w-md mx-4 relative transform scale-95 transition-transform duration-300">
+            <p class="text-xs font-sans uppercase tracking-widest text-gold mb-4">Thank you</p>
+            <h3 class="text-3xl md:text-4xl font-serif italic text-ink mb-6">Redirecting to Concierge</h3>
+
+            <div class="w-full bg-sable h-[1px] mb-6"></div>
+
+            <p class="text-stone font-sans text-sm mb-8">Please wait while we prepare your inquiry...</p>
+
+            <div class="text-5xl font-serif text-gold" id="countdown-timer">5</div>
+        </div>
+    </div>
+    <script src="assets/js/index.js" defer ></script>
+</body>
+
+</html>
