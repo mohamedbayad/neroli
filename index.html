@@ -76,7 +76,7 @@
         </div>
     </div>
 
-    <nav class="fixed top-0 left-0 w-full px-6 md:px-12 py-8 flex justify-between items-center z-50" id="navbar">
+    <nav class="absolute top-0 left-0 w-full px-6 md:px-12 py-8 flex justify-between items-center z-50" id="navbar">
         <a href="#" onclick="lenis.scrollTo(0)" class="block">
             <img src="assets/imgs/logo.png" alt="Neroli Events - Bespoke Event Planning Agency Marrakech"
                 class="h-8 w-auto object-contain">
@@ -112,19 +112,19 @@
         <div id="smooth-content">
 
             <section class="min-h-screen relative pt-40 px-6 md:px-24 flex flex-col justify-between pb-12">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-                    <div class="md:col-span-8 z-10">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-x-8 items-center">
+                    <div class="md:col-span-12 z-10">
                         <p class="text-xs font-sans uppercase tracking-[0.3em] text-gold mb-4 reveal-up">Refined Events.
                             Timeless Elegance.</p>
                     </div>
 
-                    <div class="md:col-span-6 flex items-end">
+                    <div class="md:col-span-5">
                         <div class="reveal-up delay-300">
                             <!-- <p class="md:hidden text-sm font-sans leading-relaxed text-stone">
                                 Experts in destination weddings and luxury events in Marrakech. We create unforgettable
                                 private and corporate celebrations with elegance, care, and a touch of magic.
                             </p> -->
-                            <p class="block text-sm font-sans leading-relaxed text-stone max-w-x ml-auto">
+                            <p class="block text-sm font-sans leading-relaxed text-stone max-w-sm">
                                 Experts in Destination Weddings in Marrakech <br><br>
                                 We craft unforgettable private and corporate experiences in Marrakech, designing
                                 destination weddings and refined events in Morocco with intention and care. From
@@ -133,6 +133,13 @@
                             </p>
                         </div>
                     </div>
+
+                    <div class="md:col-span-7 flex justify-center items-center reveal-up delay-500 mix-blend-multiply">
+                        <img src="assets/imgs/macaron_certified.jpg" alt="Neroli Events Certified"
+                            class="hero-macaron w-32 md:w-40 object-cover">
+                    </div>
+
+                    <div class="md:col-span-5"></div>
                 </div>
 
                 <div class="w-full h-[40vh] md:h-[50vh] mt-12 img-mask" id="hero-img">
@@ -143,9 +150,9 @@
 
             <section class="marquee-container">
                 <div class="marquee-content font-sans text-xs md:text-sm tracking-[0.2em] font-medium">
-                    BESPOKE EVENTS IN MARRAKECH © LIMITED 2025 DATES © NOW BOOK © BESPOKE EVENTS IN
-                    MARRAKECH © LIMITED 2025 DATES © NOW BOOK © BESPOKE EVENTS IN MARRAKECH © LIMITED 2025
-                    DATES © NOW BOOK
+                    BESPOKE EVENTS IN MARRAKECH © LIMITED 2025 DATES © BOOK NOW © BESPOKE EVENTS IN
+                    MARRAKECH © LIMITED 2025 DATES © BOOK NOW © BESPOKE EVENTS IN MARRAKECH © LIMITED 2025
+                    DATES © BOOK NOW
                 </div>
             </section>
 
@@ -203,7 +210,7 @@
                 class="min-h-screen md:h-screen bg-[#E6E2D8] overflow-hidden flex flex-col justify-center relative border-t border-[#121212]/10 py-20 md:py-0">
 
                 <div class="relative md:absolute top-0 md:top-12 left-6 md:left-24 z-10 mb-8 md:mb-0">
-                    <h2 class="text-3xl md:text-5xl font-[Cormorant] italic text-[#121212]">Curated Moments</h2>
+                    <h2 class="text-3xl md:text-5xl font-[Cormorant] italic text-[#121212]">Curated Memories</h2>
                 </div>
 
                 <div class="gallery-track flex gap-4 md:gap-12 pl-6 md:pl-24 items-center w-fit overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none scroll-smooth"
@@ -255,7 +262,8 @@
                     <div
                         class="gallery-item w-[75vw] md:w-[35vw] aspect-[3/4] flex-shrink-0 relative overflow-hidden group snap-center">
                         <div class="img-wrapper w-full h-full overflow-hidden">
-                            <img src="assets/imgs/gallery/5.png" loading="lazy" alt="Atmospheric Candlelight Dinner Event Design Marrakech"
+                            <img src="assets/imgs/gallery/5.png" loading="lazy"
+                                alt="Atmospheric Candlelight Dinner Event Design Marrakech"
                                 class="gallery-img w-full h-full md:h-[120%] object-cover transition duration-700">
                         </div>
                         <span
@@ -265,7 +273,8 @@
                     <div
                         class="gallery-item w-[75vw] md:w-[35vw] aspect-[3/4] flex-shrink-0 relative overflow-hidden group snap-center">
                         <div class="img-wrapper w-full h-full overflow-hidden">
-                            <img src="assets/imgs/gallery/6.jpg" loading="lazy" alt="Refined Wedding Reception Table Setting - Neroli Events"
+                            <img src="assets/imgs/gallery/6.jpg" loading="lazy"
+                                alt="Refined Wedding Reception Table Setting - Neroli Events"
                                 class="gallery-img w-full h-full md:h-[120%] object-cover transition duration-700">
                         </div>
                         <span
@@ -286,7 +295,8 @@
                     <div
                         class="gallery-item w-[75vw] md:w-[35vw] aspect-[3/4] flex-shrink-0 relative overflow-hidden group snap-center">
                         <div class="img-wrapper w-full h-full overflow-hidden">
-                            <img src="assets/imgs/gallery/8.jpg" loading="lazy" alt="Evening Event Atmosphere and Lighting Design Morocco"
+                            <img src="assets/imgs/gallery/8.jpg" loading="lazy"
+                                alt="Evening Event Atmosphere and Lighting Design Morocco"
                                 class="gallery-img w-full h-full md:h-[120%] object-cover transition duration-700">
                         </div>
                         <span
@@ -312,14 +322,16 @@
                             <div class="service-text-block min-h-[auto] md:min-h-[50vh] flex flex-col justify-center border-l border-ink/10 pl-8 md:pl-12 mb-16 md:mb-24"
                                 data-index="0">
                                 <span class="text-gold text-xs font-sans uppercase tracking-widest mb-4 block">01</span>
-                                <h3 class="text-3xl md:text-4xl font-serif mb-4 md:mb-6">Full Planning & Day-of Coordination</h3>
+                                <h3 class="text-3xl md:text-4xl font-serif mb-4 md:mb-6">Full Planning & Day-of
+                                    Coordination</h3>
 
                                 <!-- <p class="md:hidden text-stone font-sans leading-relaxed text-sm mb-6">
                                     Complete wedding and event planning in Marrakech. Every detail handled with care -
                                     design, logistics, and coordination. So you can simply enjoy the moment.
                                 </p> -->
                                 <p class="block text-stone font-sans leading-relaxed text-sm mb-8 max-w-md">
-                                    <span class="text-ink italic">For clients seeking a seamless, effortless celebration.</span></br></br>
+                                    <span class="text-ink italic">For clients seeking a seamless, effortless
+                                        celebration.</span></br></br>
                                     We design and organize every detail with care, guided by your story, your style, and
                                     the way you want your guests to feel. From the first steps to the day itself, we
                                     manage full wedding planning and event coordination in Marrakech — so you can simply
@@ -335,7 +347,8 @@
                             <div class="service-text-block min-h-[auto] md:min-h-[50vh] flex flex-col justify-center border-l border-ink/10 pl-8 md:pl-12 mb-16 md:mb-24"
                                 data-index="1">
                                 <span class="text-gold text-xs font-sans uppercase tracking-widest mb-4 block">02</span>
-                                <h3 class="text-3xl md:text-4xl font-serif mb-4 md:mb-6">Extended Celebrations & Multi-Day Experiences</h3>
+                                <h3 class="text-3xl md:text-4xl font-serif mb-4 md:mb-6">Extended Celebrations &
+                                    Multi-Day Experiences</h3>
 
                                 <!-- <p class="md:hidden text-stone font-sans leading-relaxed text-sm mb-6">
                                     Multi-day programs for international guests. Welcome parties, post-event gatherings,
@@ -379,7 +392,8 @@
                             <div class="service-text-block min-h-[auto] md:min-h-[50vh] flex flex-col justify-center border-l border-ink/10 pl-8 md:pl-12"
                                 data-index="3">
                                 <span class="text-gold text-xs font-sans uppercase tracking-widest mb-4 block">04</span>
-                                <h3 class="text-3xl md:text-4xl font-serif mb-4 md:mb-6">Elopement & Intimate Celebrations</h3>
+                                <h3 class="text-3xl md:text-4xl font-serif mb-4 md:mb-6">Elopement & Intimate
+                                    Celebrations</h3>
 
                                 <!-- <p class="md:hidden text-stone font-sans leading-relaxed text-sm mb-6">
                                     Intimate events designed with elegance and intention. Exclusive venues, trusted
@@ -433,21 +447,23 @@
                     <form id="whatsapp-form" onsubmit="handleFormSubmit(event)" class="border border-[#121212]/20">
 
                         <div class="p-12 text-center border-b border-[#121212]/20">
-                            <h2 class="text-4xl md:text-5xl font-[Cormorant] italic">This is where your event story
-                                begins</h2>
+                            <h2 class="text-4xl md:text-5xl font-[Cormorant] italic">Let your story begin here.</h2>
+                            <p class="mt-6 text-stone font-sans text-sm max-w-xl mx-auto">Feel like we could be the
+                                perfect fit? We'd truly love to hear from you. Send us a message, and we will
+                                respond within 24 hours to talk about your vision and how we can bring it to life.</p>
                         </div>
 
                         <div class="flex flex-col md:flex-row border-b border-[#121212]/20">
                             <div
                                 class="w-full md:w-1/2 p-8 border-b md:border-b-0 md:border-r border-[#121212]/20 relative">
                                 <label
-                                    class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-[Montserrat]">Name*</label>
+                                    class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-[Montserrat]">NAME*</label>
                                 <input type="text" id="name" required
                                     class="w-full bg-transparent outline-none text-xl font-[Cormorant] placeholder-gray-300">
                             </div>
                             <div class="w-full md:w-1/2 p-8 relative">
                                 <label
-                                    class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-[Montserrat]">Email*</label>
+                                    class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2 font-[Montserrat]">EMAIL*</label>
                                 <input type="email" id="email" required
                                     class="w-full bg-transparent outline-none text-xl font-[Cormorant] placeholder-gray-300">
                             </div>
@@ -456,7 +472,7 @@
                         <div class="p-8 border-b border-[#121212]/20">
                             <textarea id="message" rows="1"
                                 class="w-full bg-transparent outline-none text-xl font-[Cormorant] resize-none h-32 placeholder-gray-400"
-                                placeholder="Tell us about your event plans — dates, location, ideas... or just say hi!"></textarea>
+                                placeholder="Tell us about your celebration — your dreams, your dates, your ideas..."></textarea>
                         </div>
 
                         <div class="p-8 border-b border-[#121212]/20 flex items-center gap-6">
@@ -464,16 +480,18 @@
                                 <input type="checkbox" id="privacy" required class="oval-checkbox">
                             </div>
                             <label for="privacy" class="text-lg font-[Cormorant] cursor-pointer opacity-80">
-                                I have read and accept the privacy policy
+                                I have read and agree to the privacy policy
                             </label>
                         </div>
 
-                        <div class="py-16 flex justify-center items-center bg-[#F7F5F0]">
+                        <div class="py-16 flex justify-center items-center flex-col bg-[#F7F5F0]">
                             <button type="submit" class="oval-button group">
                                 <span
                                     class="text-xs uppercase tracking-widest font-[Montserrat] group-hover:text-[#F7F5F0] transition">Send
                                     Message</span>
                             </button>
+                            <p class="mt-4 text-[10px] uppercase tracking-[0.2em] text-stone font-[Montserrat]">You will
+                                hear from us very soon.</p>
                         </div>
 
                     </form>
@@ -490,7 +508,7 @@
 
             <footer
                 class="py-8 text-center text-[10px] uppercase tracking-widest text-stone border-t border-ink/5 bg-nude">
-                &copy; 2024 Neroli Events | created by<a href="https://funnel.clickboost.ma/" target="_blank" class="underline"> clickboost </a>
+                Copyright 2026 NEROLI EVENTS. All Rights Reserved | CREATED BY CLICKBOOST
             </footer>
 
         </div>

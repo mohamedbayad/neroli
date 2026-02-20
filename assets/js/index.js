@@ -44,12 +44,12 @@ window.addEventListener("load", () => {
         }, "-=0.8");
 });
 
-// 3. NAVBAR SCROLL
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) navbar.classList.add('scrolled');
-    else navbar.classList.remove('scrolled');
-});
+// 3. NAVBAR SCROLL (Disabled)
+// const navbar = document.getElementById('navbar');
+// window.addEventListener('scroll', () => {
+//     if (window.scrollY > 50) navbar.classList.add('scrolled');
+//     else navbar.classList.remove('scrolled');
+// });
 
 // 4. MOBILE MENU
 function toggleMenu() {
