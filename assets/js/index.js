@@ -69,24 +69,73 @@ function scrollToContact() {
 // 5. STICKY IMAGE SWAP (Desktop Only - Performance)
 if (window.innerWidth >= 1024) {
     function initServicesScrollTrigger() {
-        const textBlocks = document.querySelectorAll('.service-text-block');
-        const images = document.querySelectorAll('.service-img-container');
+        const serviceBlocks = gsap.utils.toArray('.service-text-block');
+        const mediaGroups = gsap.utils.toArray('.service-media-group');
 
-        function updateImage(index) {
-            images.forEach(img => img.classList.remove('active'));
-            if (images[index]) images[index].classList.add('active');
+        // Initial State: Hide all groups except the first one
+        gsap.set(mediaGroups, { autoAlpha: 0 }); 
+        if (mediaGroups[0]) gsap.set(mediaGroups[0], { autoAlpha: 1 });
+
+        let activeMediaIndex = -1;
+
+        function switchMediaGroup(index) {
+            if (index === activeMediaIndex) return; 
+            
+            if (activeMediaIndex > -1) {
+                gsap.to(mediaGroups[activeMediaIndex], { autoAlpha: 0, duration: 0.8, ease: "power2.inOut" });
+            }
+            
+            if (mediaGroups[index]) {
+                gsap.to(mediaGroups[index], { autoAlpha: 1, duration: 0.8, ease: "power2.inOut" });
+            }
+            
+            activeMediaIndex = index;
         }
 
-        textBlocks.forEach((block, index) => {
+        serviceBlocks.forEach((block, index) => {
+            const currentGroup = mediaGroups[index];
+            if (!currentGroup) return;
+
+            const images = currentGroup.querySelectorAll('.service-img');
+            
+            // TRIGGER A: GROUP SWITCHING
             ScrollTrigger.create({
                 trigger: block,
-                start: "top 60%",
-                end: "bottom 40%",
-                onEnter: () => updateImage(index),
-                onEnterBack: () => updateImage(index),
+                start: "top center",
+                end: "bottom center",
+                onEnter: () => switchMediaGroup(index),
+                onEnterBack: () => switchMediaGroup(index),
             });
+
+            // TRIGGER B: PINNING & SCRUBBING MULTI-IMAGES
+            if (images.length > 1) {
+                gsap.set(images[0], { autoAlpha: 1, yPercent: 0 });
+                for (let i = 1; i < images.length; i++) {
+                    gsap.set(images[i], { autoAlpha: 0, yPercent: 10 });
+                }
+
+                const pinTl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: block,
+                        start: "center center", 
+                        end: () => `+=${window.innerHeight * (images.length - 1)}`, 
+                        pin: true,
+                        scrub: 1,
+                        invalidateOnRefresh: true
+                    }
+                });
+
+                images.forEach((img, i) => {
+                    if (i === 0) return;
+                    pinTl.to(img, {
+                        autoAlpha: 1,
+                        yPercent: 0,
+                        ease: "none"
+                    });
+                });
+            }
         });
-        updateImage(0);
+        switchMediaGroup(0);
     }
     setTimeout(() => {
         initServicesScrollTrigger();
