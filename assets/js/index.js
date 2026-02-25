@@ -73,22 +73,22 @@ if (window.innerWidth >= 1024) {
         const mediaGroups = gsap.utils.toArray('.service-media-group');
 
         // Initial State: Hide all groups except the first one
-        gsap.set(mediaGroups, { autoAlpha: 0 }); 
+        gsap.set(mediaGroups, { autoAlpha: 0 });
         if (mediaGroups[0]) gsap.set(mediaGroups[0], { autoAlpha: 1 });
 
         let activeMediaIndex = -1;
 
         function switchMediaGroup(index) {
-            if (index === activeMediaIndex) return; 
-            
+            if (index === activeMediaIndex) return;
+
             if (activeMediaIndex > -1) {
                 gsap.to(mediaGroups[activeMediaIndex], { autoAlpha: 0, duration: 0.8, ease: "power2.inOut" });
             }
-            
+
             if (mediaGroups[index]) {
                 gsap.to(mediaGroups[index], { autoAlpha: 1, duration: 0.8, ease: "power2.inOut" });
             }
-            
+
             activeMediaIndex = index;
         }
 
@@ -97,7 +97,7 @@ if (window.innerWidth >= 1024) {
             if (!currentGroup) return;
 
             const images = currentGroup.querySelectorAll('.service-img');
-            
+
             // TRIGGER A: GROUP SWITCHING
             ScrollTrigger.create({
                 trigger: block,
@@ -117,8 +117,8 @@ if (window.innerWidth >= 1024) {
                 const pinTl = gsap.timeline({
                     scrollTrigger: {
                         trigger: block,
-                        start: "center center", 
-                        end: () => `+=${window.innerHeight * (images.length - 1)}`, 
+                        start: "center center",
+                        end: () => `+=${window.innerHeight * (images.length - 1)}`,
                         pin: true,
                         scrub: 1,
                         invalidateOnRefresh: true
@@ -228,7 +228,7 @@ function getScrollAmount() {
 }
 
 const tween = gsap.to(galleryTrack, {
-    x: getScrollAmount,
+    x: () => getScrollAmount(),
     ease: "none",
     scrollTrigger: {
         trigger: gallerySection,
@@ -237,7 +237,9 @@ const tween = gsap.to(galleryTrack, {
         pin: true,
         scrub: 1,
         invalidateOnRefresh: true,
-        anticipatePin: 1 // Améliore la fluidité du pin
+        fastScrollEnd: true, // Prevents Y-axis scroll jumping & ensures layout catches up
+        preventOverlaps: true,
+        anticipatePin: 1
     }
 });
 
